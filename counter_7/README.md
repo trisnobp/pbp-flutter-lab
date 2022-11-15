@@ -1,4 +1,3 @@
-# Tugas 7 (Flutter)
 Nama    : Trisno Bayu Pamungkas
 
 NPM     : 2106702200
@@ -6,6 +5,10 @@ NPM     : 2106702200
 Kelas   : PBP-F
 
 Asdos   : BYN
+
+
+# Tugas 7 (Flutter)
+
 
 1) Jelaskan apa yang dimaksud dengan stateless widget dan stateful widget dan jelaskan perbedaan dari keduanya.
 
@@ -67,6 +70,72 @@ Final - Variabel tersebut nilainya bisa sudah ataupun belum diketahui saat waktu
 
 
 - Menambahkan widget Row untuk menampung tombol decrement dan increment dan juga Padding untuk mengatur padding dari tombol decrement.
+
+
+# Tugas 8
+
+1. Jelaskan perbedaan Navigator.push dan Navigator.pushReplacement.
+
+
+    - Navigator.push = Navigator yang memungkinkan kita untuk pergi ke route atau page baru. Biasanya Navigator.push saling berhubungan dengan Navigator.pop, di mana Navigator.pop berfungsi agar kita bisa kembali ke route atau page sebelumnya.
+
+    - Navigator.pushReplacement = Navigator.pushReplacement memungkinkan kita untuk pergi ke route atau page baru dan sekaligus me-replace route yang lama dengan route baru. Dengan demikian, kita tidak akan bisa pergi ke route atau page sebelumnya (Contoh: Auth)
+
+
+2. Sebutkan widget apa saja yang kamu pakai di proyek kali ini dan jelaskan fungsinya.
+
+
+    - SnackBar = Widget untuk menampilkan pop-up message pada aplikasi dalam jangka waktu tertentu
+
+    - TextButton = Widget untuk menampilkan button tanpa border (by default)
+
+    - DropDownButtonFormField = Widget untuk menampilkan sebuah dropwdown list yang berisi beberapa item
+
+    - Container = Widget yang biasanya digunakan untuk membungkus widget lainnya. Biasanya, container digunakan untuk positioning dan sizing dari child widget
+
+    - ListTile = Widget yang digunakan untuk menampilkan informasi yang membentuk sebuah list dan juga terdapat sekumpulan widget di dalamnya
+
+    - SafeArea = Widget yang digunakan untuk membuat tampilan aplikasi kita menjadi aman (tidak terpotong) dan tidak terganggung oleh bentuk layar perangkat 
+
+    - TextFormField = Widget yang merupakan bagian dari form, di mana widget ini akan mengambil input yang ditulis oleh user
+
+    - Form = Widget untuk membuat form di dalam aplikasi
+
+    - Drawer = Widget untuk menampilkan menu yang tersembunyi pada sisi kanan atau kiri sebuah aplikasi
+
+    - ListView = Widget yang dapat di-scroll dan menampilkan beberapa widget di dalamnya
+
+
+3. Sebutkan jenis-jenis event yang ada pada Flutter (contoh: onPressed).
+
+
+    - onLongPressed = Saat widget ditekan agak lama (dalam jangka waktu tertentu)
+
+    - onTap = Saat widget tersebut ditekan
+
+    - onSaved = Saat dilakukan penyimpanan pada form
+
+    - onChanged = Saat terjadi perubahan data pada widget (Example: TextFormField, yang berubah-ubah sesuai input dari user)
+
+
+4. Jelaskan bagaimana cara kerja Navigator dalam "mengganti" halaman dari aplikasi Flutter.
+
+
+    Cara kerja Navigator hampir sama konsepnya dengan Stack. Di mana, saat kita ingin membuka suatu page atau route, dilakukan push ke dalam Stack, sehingga item paling atas dari Stack adalah route yang kita tuju. Jika kita ingin kembali ke route sebelumnya, dilakukan Navigator.pop untuk menghapus route paling atas dari Stack, sehingga nanti item paling atas adalah route atau page sebelumnya.
+
+
+5. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas.
+
+
+    - Membuat 3 folder utama, yaitu widgets, pages, dan models. Folder widgets berisi file-file custom widget, folder pages berisi setiap page yang ada di dalam aplikasi, dan folder models berisi file untuk mendefinisikan class dari object yang akan digunakan.
+
+    - Refactor widget Drawer ke sebuah file terpisah, yaitu drawer.dart pada folder widgets.
+
+    - Membuat form budgeting pada file budget_form dengan memanfaatkan widget Form dan child widget lainnya untuk meminta input, seperti TextFormField, DropDownButtonFormField, dan DatePicker. Kemudian setiap input yang diberikan oleh user, akan disimpan ke dalam list yang ada di file budget_data dalam bentuk object, yaitu Data Object (class Data didefinisikan di file data.dart pada folder models)
+
+    - Menampilkan data budgeting yang di-input user pada page budget_data menggunakan widget Card. Untuk menampilkan keseluruhan data yang ada di dalam list, digunakan widget ListView.
+
+
 
 
 
