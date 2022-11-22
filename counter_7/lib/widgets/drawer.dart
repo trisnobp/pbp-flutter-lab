@@ -1,6 +1,7 @@
 import 'package:counter_7/pages/budget_data.dart';
 import 'package:counter_7/pages/budget_form.dart';
 import 'package:counter_7/pages/counter7_page.dart';
+import 'package:counter_7/pages/watch_list_page.dart';
 import 'package:flutter/material.dart';
 
 class DrawerBar extends StatelessWidget {
@@ -35,6 +36,15 @@ class DrawerBar extends StatelessWidget {
                 Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(builder: (context) => const BudgetData(title: "Data Budget")),
+                );
+              },
+            ),
+            ListTile(
+              title: const Text('My Watch List'),
+              onTap: () {
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(builder: (context) => const WatchListPage(title: "My Watch List")),
                 );
               },
             ),
