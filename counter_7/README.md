@@ -136,6 +136,50 @@ Final - Variabel tersebut nilainya bisa sudah ataupun belum diketahui saat waktu
     - Menampilkan data budgeting yang di-input user pada page budget_data menggunakan widget Card. Untuk menampilkan keseluruhan data yang ada di dalam list, digunakan widget ListView.
 
 
+# Tugas 9
+
+1. Apakah bisa kita melakukan pengambilan data JSON tanpa membuat model terlebih dahulu? Jika iya, apakah hal tersebut lebih baik daripada membuat model sebelum melakukan pengambilan data JSON?
+
+    Bisa. Hal tersebut dilakukan dengan mengambil data JSON dan ditaruh pada suatu variabel tanpa dipetakan kepada model. Namun, jika tidak dipetakan pada suatu model, maka data-datanya tidak bisa secara langsung di-convert dan ditaruh di dalam List untuk MyWatchList object. Oleh karena itu, akan lebih baik jika dibuat sebuah model agar data yang didapatkan bisa langsung dipetakan dan di-convert menjadi object MyWatchList.
+
+
+2. Sebutkan widget apa saja yang kamu pakai di proyek kali ini dan jelaskan fungsinya.
+
+
+    - FutureBuilder: Widget yang digunakan untuk membuat widget berdasarkan data yang didapatkan secara asinkronus
+
+    - CircularProgressIndicator: Widget untuk menampilkan progress atau loading (Lingkaran yang berputar menunjukkan bahwa aplikasi sedang sibuk atau on hold)
+
+    - InkWell: Widget yang digunakan untuk membungkus suatu widget agar bisa melakukan event handling saat ditekan
+
+    - CheckBox: Widget untuk menampilkan checkbox yang menyimpan sebuah boolean value
+
+    - Text.rich: Widget untuk menampilkan teks, di mana teks yang ada di dalamnya bisa memiliki style yang berbeda-beda
+
+    - TextSpan: Widget yang merupakan span of text yang immutable.
+
+    - ElevatedButton: Widget untuk menampilkan tombol (elevation-nya meningkat saat tombol ditekan)
+
+
+3. Jelaskan mekanisme pengambilan data dari json hingga dapat ditampilkan pada Flutter.
+
+
+    - Membuat sebuah fungsi fetchWatchList() yang mengambil data dari endpoint JSON tugas 3 secara asinkronus.
+    
+    - Di dalam fungsi fetchWatchList(), response yang didapatkan di-decode menjadi JSON, kemudian dilakukan konversi data JSON menjadi MyWatchList object menggunakan method fromJson(). Object-object yang sudah dibuat ditaruh di dalam sebuah list.
+
+    - List berisi MyWatchList object yang sudah didapatkan sebelumnya akan ditampilkan datanya pada aplikasi dengan memanfaatkan FutureBuilder dan ListView.builder.
+
+
+4. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas.
+
+
+    - Membuat satu file yang akan menjadi model dari MyWatchList, yaitu my_watch_list.dart pada folder models.
+
+    - Membuat fungsi fetchWatchList yang diletakkan pada file fetch_data.dart (folder functions). Fungsi tersebut berfungsi untuk mendapatkan data watch list dari internet berupa JSON, kemudian di-convert ke dalam object MyWatchList.
+
+    - Membuat dua file pages, watch_list_page.dart dan watch_list_detail.dart. Pada watch_list_page, dibuat halaman yang berisikan card dengan judul film yang didapatkan dari fungsi fetchWatchList. Pada setiap card, dibuat checkbox dan warna outline yang menunjukkan apakah suatu film sudah ditonton atau belum. Kemudian, jika suatu card ditekan, maka akan masuk ke watch_list_detail yang berisikan detail dari film yang dipilih.
+
 
 
 

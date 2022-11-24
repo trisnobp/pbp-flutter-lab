@@ -17,7 +17,6 @@ class _MyWatchListPageState extends State<WatchListPage> {
   bool? isWatched; // Buat validasi checkbox
   Color outlineColor = Colors
       .red; //Warna outline dari tiap card (diatur berdasarkan status ditonton)
-  Watched? realStatus;
 
   @override
   Widget build(BuildContext context) {
@@ -52,13 +51,7 @@ class _MyWatchListPageState extends State<WatchListPage> {
                           : false; // Check apakah film sudah ditonton atau belum
 
                       // Menentukan outline color dari card
-                      if (isWatched == true) {
-                        // Jika sudah ditonton
-                        outlineColor = Colors.teal;
-                      } else {
-                        // Jika belum ditonton
-                        outlineColor = Colors.red;
-                      }
+                      outlineColor = (isWatched == true) ? Colors.teal : Colors.red;
                       return InkWell(
                         onTap: (() {
                           // Jika card ditekan, akan langsung akses detail page yang berisi detail film tersebut

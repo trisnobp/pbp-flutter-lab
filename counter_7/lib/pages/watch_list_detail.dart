@@ -128,7 +128,10 @@ class WatchListDetail extends StatelessWidget {
               Navigator.pop(context);
             },
             child: const Text(
-              "Back"
+              "Back",
+              style: TextStyle(
+                fontSize: 16
+              ),
             ),
           ),
         ),
